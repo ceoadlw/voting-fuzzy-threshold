@@ -601,8 +601,11 @@ Where $l_x, l_y, l_z$, and $l_q$ represent chaotic sequence values generated wit
 
 These encoded blocks undergo DNA complementation where each nucleotide is replaced with its complementary nucleotide (A↔T, C↔G). For example, a sequence "AACGT" becomes "TTGCA". This step introduces another layer of complexity to the encryption process.
 
-**DNA Decoding and Key Generation:** The complemented DNA sequences are then decoded back to binary form, but now with significantly altered structure. The resulting binary stream undergoes SHA-256 hashing to generate a 256-bit encryption key. A representative output of this process produces a binary key:
-`00110101000001010001010100000100110010001100110100010100110110...`
+**DNA Decoding and Key Generation:** The complemented DNA sequences are then decoded back to binary form, but now with significantly altered structure. The resulting binary stream undergoes SHA-256 hashing to generate a 256-bit encryption key. A representative output of this process produces a binary key (line breaks added for wrapping):
+```
+00110101000001010001010100000100110010001100110100010100
+110110...
+```
 
 This key is used with AES-256 to encrypt the original biometric template. The hash of the encrypted template is stored in the central database, while the encrypted template itself is written to the voter's smart card. The decryption key is securely stored against the voter's national ID in the database and is only retrieved after successful hash verification.
 
@@ -654,4 +657,3 @@ The architecture successfully addresses limitations in current voting systems by
 21. V. Cortier, P. Gaudry, and P. Y. A. Ryan, Eds., *Proc. 6th Int. Conf. E-Voting and Identity (Vote-ID 2017)*, Bregenz, Austria, Oct. 2017, vol. 10615, Lecture Notes in Computer Science. Springer, Cham. doi: 10.1007/978-3-319-68687-5.
 
 ```
-
